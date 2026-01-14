@@ -1,18 +1,18 @@
-# Sales & Customer Analytics Data Warehouse
+# Sales & Customer Analytics (SQL Portfolio)
 
 ## Project Overview
 
-This project involves building a Data Warehouse solution using SQL Server (T-SQL) to analyze sales performance, customer behavior, and product trends. The goal is to transform raw sales data into actionable business insights, facilitating data-driven decision-making for marketing and inventory management.
+This project demonstrates advanced SQL capabilities by analyzing sales performance, customer behavior, and product trends. The goal is to transform raw sales data into actionable business insights, facilitating data-driven decision-making for marketing and inventory management.
 
 ## Business Impact & Insights
 
 This analysis provides the following strategic value:
 
 - **Customer Retention**  
-  Identified "VIP" vs. "Reguler" vs. "New" customers through RFM (Recency, Frequency, Monetary) segmentation, enabling targeted retention strategies.
+  Identified VIP, Regular, and New customers through RFM (Recency, Frequency, Monetary) segmentation, enabling targeted retention strategies.
 
 - **Product Optimization**  
-  Classified inventory into "High-Performer", "Mid-Range", and "Low-Performer" categories to optimize stock levels and pricing strategies.
+  Classified inventory into High-Performer, Mid-Range, and Low-Performer categories to optimize stock levels and pricing strategies.
 
 - **Trend Analysis**  
   Uncovered seasonality and year-over-year growth patterns to forecast demand more accurately.
@@ -25,22 +25,20 @@ Microsoft SQL Server
 **SQL Skills**
 
 - Advanced Analysis: Window Functions (`OVER`, `RANK`, `LAG`), CTEs, and Subqueries  
-- Data Modeling: Star Schema design (Fact & Dimension tables)  
-- ETL: Bulk inserts and data type handling  
-- Reporting: Creating SQL Views for persistent reporting layers  
+- Data Modeling: Star Schema design (Fact and Dimension tables)  
+- Reporting: Creating SQL Views for persistent reporting layers
 
 ## Repository Structure
 
 ````
-├── flat-files/ # Raw CSV data files
-│ ├── dim_customers.csv
-│ ├── dim_products.csv
-│ └── fact_sales.csv
- # SQL Source Code
+├── flat-files/                     # Raw CSV data files
+│   ├── dim_customers.csv
+│   ├── dim_products.csv
+│   └── fact_sales.csv
 ├── 00_init_database.sql # Database creation & data loading
-├── 01_advanced_data_analytics.sql # Ad-hoc analytical queries
-├── 02_customer_report.sql # View: Consolidated customer metrics
-└── 03_product_report.sql # View: Consolidated product metrics
+├── 01_advanced_data_analytics.sql  # Ad-hoc analytical queries & trends
+├── 02_customer_report.sql          # View: Consolidated customer metrics & RFM
+├── 03_product_report.sql           # View: Consolidated product metrics & segmentation
 └── README.md
 ````
 
@@ -78,12 +76,12 @@ A consolidated view for CRM and Marketing teams.
 A performance dashboard for the Product and Sales team.
 
 - **Features**: Tracks revenue, profit margins (Sales vs Cost), and inventory velocity  
-- **Logic**: Flags product performance status (High/Mid/Low) to identify Cash Cows and potential Dead Stock  
+- **Logic**: Flags product performance status (High, Mid, Low) to identify Cash Cows and potential Dead Stock  
 
 ## How to Run
 
 1. **Setup Database**  
-   Open `00_init_database.sql` in SSMS. Update the file paths in the `BULK INSERT` commands to match your local directory where the `datasets/` folder is located.
+   Open `00_init_database.sql` in SSMS. Update the file paths in the `BULK INSERT` commands to match your local directory where the `flat-files/` folder is located.
 
 2. **Execute Init Script**  
    Run the script to create the database, schema, and load the data.
