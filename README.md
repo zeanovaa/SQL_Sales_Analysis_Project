@@ -36,11 +36,11 @@ Microsoft SQL Server
 │ ├── dim_customers.csv
 │ ├── dim_products.csv
 │ └── fact_sales.csv
-├── scripts/ # SQL Source Code
-│ ├── init_database.sql # Database creation & data loading
-│ ├── 1_advanced_analysis.sql # Ad-hoc analytical queries
-│ ├── 2_customer_report.sql # View: Consolidated customer metrics
-│ └── 3_product_report.sql # View: Consolidated product metrics
+ # SQL Source Code
+├── 00_init_database.sql # Database creation & data loading
+├── 01_advanced_data_analytics.sql # Ad-hoc analytical queries
+├── 02_customer_report.sql # View: Consolidated customer metrics
+└── 03_product_report.sql # View: Consolidated product metrics
 └── README.md
 ````
 
@@ -83,10 +83,10 @@ A performance dashboard for the Product and Sales team.
 ## How to Run
 
 1. **Setup Database**  
-   Open `scripts/init_database.sql` in SSMS. Update the file paths in the `BULK INSERT` commands to match your local directory where the `datasets/` folder is located.
+   Open `00_init_database.sql` in SSMS. Update the file paths in the `BULK INSERT` commands to match your local directory where the `datasets/` folder is located.
 
 2. **Execute Init Script**  
    Run the script to create the database, schema, and load the data.
 
 3. **Run Analysis**  
-   Execute scripts `1`, `2`, and `3` to generate reports and views.
+   Execute scripts `01`, `02`, and `03` to generate reports and views.
